@@ -1,0 +1,615 @@
+<html>
+  <head>
+    <title>It's Me</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+
+    <style>
+      body {
+        /*background-image: linear-gradient(0deg, #028391 0%, #01204E  100%);*/
+        background-image: linear-gradient(
+          43deg,
+          rgba(106, 5, 139, 1) 0%,
+          rgba(110, 54, 204, 1) 39%,
+          rgba(0, 212, 255, 1) 100%
+        );
+        background-repeat: no-repeat;
+        color: darkslategray;
+      }
+
+      /*--common elements--*/
+      /*#01204E , #028391 , #F6DCAC*/
+
+      .nav {
+        height: 110%;
+        width: 75px;
+        margin-left: -10;
+        margin-top: -10;
+        background-color: #01204e;
+        position: fixed;
+        text-align: center;
+      }
+
+      .navCont {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100%;
+      }
+
+      .navCont a {
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 20px;
+        width: 50px;
+        overflow-y: auto;
+      }
+
+      .navCont a:hover {
+        background-color: #022f71;
+        cursor: pointer;
+      }
+
+      .container {
+        margin-left: 76px;
+        margin-right: 0px;
+      }
+
+      section {
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .card {
+        background-color: #ebe8e4b3;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        border: 20px;
+        padding: 20px;
+        text-align: left;
+        font-family: arial;
+      }
+
+      .title {
+        color: white;
+        text-shadow: #01204e 0.1em 0.1em 0.4em;
+        margin-bottom: 15px;
+        font-family: "Times New Roman";
+        font-style: oblique;
+        font-size: 40px;
+      }
+
+      li {
+        margin: 3px;
+        text-align: justify;
+        margin-bottom: 15px;
+      }
+
+      /*--Hero stuff--*/
+
+      .hero-image {
+        background-image: url("C:/Users/Sandaru/Downloads/meyawo/public_html/assets/imgs/header.jpg");
+        margin: (-10px, -10px, 0px, -10px);
+        mask-image: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0.9),
+          rgba(0, 0, 0, 0)
+        );
+
+        background-color: #cccccc;
+        width: 100%;
+        height: 70%;
+        background-position-x: center;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-text {
+        text-align: center;
+        text-shadow: black 0.1em 0.1em 0.4em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+
+      .handle {
+        background-color: darkgray;
+        color: white;
+        text-decoration: none;
+        border-radius: 26px;
+        width: fit-content;
+        padding: 3px;
+      }
+
+      .handle td {
+        margin-top: 5px;
+        padding: 3px;
+      }
+
+      .handle:hover {
+        background-color: gray;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      .icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: contain;
+      }
+
+      .links {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      /*--about section--*/
+      #disc {
+        text-align: justify;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 30px;
+        padding-top: 10px;
+      }
+
+      td {
+        padding: 3px;
+        padding-left: 10px;
+      }
+
+      #about img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+
+      /*--skills section--*/
+
+      #skillsContent {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+      }
+
+      #skillsContent .card {
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 5px;
+        width: 100%;
+      }
+
+      /*--Experiance Section--*/
+
+      .line {
+        /*border-right: #01204E 3px solid;*/
+        padding: 15px;
+      }
+
+      .logo {
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        padding: 0px;
+        border-radius: 20px;
+        border-bottom: #01204e 3px solid;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /*--CPD Section--*/
+
+      #cpd .content {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        vertical-align: top;
+      }
+
+      .cardImg {
+        width: 280px;
+        height: 200px;
+        object-position: top;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .evtcard {
+        background-color: #ebe8e4b3;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        border: 10px;
+        width: 300px;
+        padding: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
+        text-align: center;
+        font-family: arial;
+      }
+
+      /*--Contact Section--*/
+
+      .contactDet {
+        display: flex;
+        flex-direction: row;
+      }
+
+      form {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        max-width: 400px;
+      }
+
+      input {
+        width: 200%;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      textarea {
+        margin: 5px;
+        width: 200%;
+        height: 100px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 150px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: none;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background-color: gray;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="nav">
+      <div class="navCont">
+        <a href="#home"><img src="./media/home.png" class="logo" /></a>
+        <a href="#about"><img src="./media/about.jpg" class="logo" /></a>
+        <a href="#skills"><img src="./media/skills.jpg" class="logo" /></a>
+        <a href="#education"><img src="./media/edu.png" class="logo" /></a>
+        <a href="#awards"><img src="./media/awards.png" class="logo" /></a>
+        <a href="#experiance"
+          ><img src="./media/experiance.jpg" class="logo"
+        /></a>
+        <a href="#cpd"><img src="./media/cpd.png" class="logo" /></a>
+        <a href="#contact"><img src="./media/contact.png" class="logo" /></a>
+      </div>
+    </div>
+
+    <div class="container">
+      <!--HomePage-->
+
+      <div class="hero-image" id="home">
+        <div class="hero-text">
+          <h1 style="font-size: 50px">I am Sandaru Senitha</h1>
+          <h3>
+            An undergraduate student @<br>
+            University of Sri Jayawardenapura
+          </h3>
+
+          <div class="links">
+            <div class="handle">
+              <table>
+                <tr>
+                  <td>
+                    <img class="icon" src="./media/linkedIn.png" />
+                  </td>
+                  <td style="vertical-align: middle; color: white">
+                    checkout my LinkedIn here
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="handle">
+              <table>
+                <tr>
+                  <td>
+                    <img class="icon" src="./media/fb.jpg" />
+                  </td>
+                  <td style="vertical-align: middle; color: white">
+                    checkout my Facebook here
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--About-->
+
+      <section id="about">
+        <div class="card">
+          <table>
+            <tr>
+              <td>
+                <img src="./media/bust.jpg" />
+              </td>
+
+              <td id="disc">
+                <div class="title">I'm...</div>
+
+                <p>
+                  ... a highly motivated and hardworking individual studying at
+                  University of Sri Jayawardenapura in freshman year. I'm a 22
+                  years old, unmarried individual living in Colombo.
+                </p>
+                <p>
+                  Currently I'm following bcomp(hons) in Computer Science and
+                  CIMA qualification. I'm an active member in Gavel club and
+                  IEEE student chapter of my university.
+                </p>
+                <p>
+                  In addition to my academic interests, I am a nature lover who
+                  enjoys spending time outdoors, appreciating the beauty and
+                  tranquility of natural landscapes. Not to forget that my
+                  passion with music and public speaking is indefinitely defines
+                  my personality.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!--Skills and Abilities-->
+
+      <section id="skills">
+        <div class="card">
+          <div class="title">Skills & abilities</div>
+
+          <div id="skillsContent">
+            <div class="card">
+              <ul>
+                <li>Java</li>
+                <li>DB management</li>
+                <li>HTML</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <ul>
+                <li>Communication</li>
+                <li>Team working skills</li>
+                <li>Critical thinking</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <ul>
+                <li>Leadership</li>
+                <li>Adaptability</li>
+                <li>three</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Education and certification-->
+
+      <section id="education">
+        <div class="card">
+          <div class="title">Education</div>
+
+          <table>
+            <tr>
+              <td class="logo"><img src="./media/usjp.png" /></td>
+              <td>2023 - Present</td>
+              <td style="font-weight: bolder">
+                Bcomp.(sp) Hons. in Computer Science (R)
+              </td>
+              <td>University of Sri Jayewardhanapura</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/cima.jpeg" /></td>
+              <td>2023</td>
+              <td style="font-weight: bolder">
+                Certificate of Management Acconting
+              </td>
+              <td>CIMA</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/AC.jpg"</td>
+              <td>2018 - 2022</td>
+              <td style="font-weight: bolder">GCE A/L - 1A 1B 1C</td>
+              <td>Ananda College - Colombo</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/AC.jpg" /></td>
+              <td>2013 - 2018</td>
+              <td style="font-weight: bolder">GCE O/L - 8A 1B</td>
+              <td>Ananda College - Colombo</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/MC.jpeg" /></td>
+              <td>2008 - 2013</td>
+              <td style="font-weight: bolder">Primary Education</td>
+              <td>Mahanama College - Colombo</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!--Awards and Projects-->
+
+      <section id="awards">
+        <div class="card">
+          <div class="title">Awards and Projects</div>
+
+          <table>
+            <tr>
+              <td>2023</td>
+              <td style="font-weight: bolder">Merit award</td>
+              <td style="font-weight: bolder">Sports Colours awards - USJ</td>
+            </tr>
+
+            <tr>
+              <td>2020</td>
+              <td style="font-weight: bolder">Champions - National Level</td>
+              <td style="font-weight: bolder">
+                GenU innovation Competition by UNDP Sri Lanka
+              </td>
+            </tr>
+
+            <tr>
+              <td></td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!--Experiance-->
+
+      <section id="experiance">
+        <div class="card">
+          <div class="title">Experiance</div>
+
+          <table>
+            <tr>
+              <td class="logo"><img src="./media/ieeeusj.jpeg" /></td>
+              <td style="font-weight: bolder">2023.08 - Present</td>
+              <td>Member</td>
+              <td>IEEE SC - University of Sri Jayewardhanapura</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/gavel.png" /></td>
+              <td style="font-weight: bolder">2023.07 - Present</td>
+              <td>Member</td>
+              <td>Gavel Club - University of Sri Jayewardhanapura</td>
+            </tr>
+
+            <tr>
+              <td class="line"></td>
+            </tr>
+            <tr>
+              <td class="logo"><img src="./media/oxfam.png" /></td>
+              <td style="font-weight: bolder">2022.04 - 2022.06</td>
+              <td>Voulenteer</td>
+              <td>Oxfam Australia</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+
+      <!--Other Professional Development-->
+
+      <section id="cpd">
+        <div class="card">
+          <div class="title">Other Professional Development</div>
+
+          <div class="content">
+            <div class="evtcard">
+              <h2>IT Legacy 1.0</h2>
+              <img class="cardImg" src="./media/legacy.jpg" />
+              <p>
+                Participated Road to Legacy 1.0 a Career Guidance Workshop
+                hosted by IT Legacy. It covered mainly six domains in IT
+                industry that are crucial for budding developers should have.
+                They are : Cloud Computing , Cyber Security , AI,....
+              </p>
+            </div>
+
+            <div class="evtcard">
+              <h2>IEEE Xtreme 17.0</h2>
+              <img class="cardImg" src="./media/Xteame.jpeg" />
+              <p>
+                Participated in IEEE Xtreame 17.0. IEEE Xtreme is a globle
+                hackathon hosted by IEEE. It is a great platform to put my
+                skills into action and showcase my skills. Not only it brushes
+                up the knowledge but also helps in solving real life problems
+                and gave me a comprihensive knowledge of what the industry looks
+                like.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="card">
+          <div class="title">Contact me</div>
+
+          <div class="contactDet">
+            <div class="card">
+              <p style = "font-size: 25px; font-family: Arial, Helvetica, sans-serif;"> 
+                Hey! I am looking forward to work with you. <br>Feel free to contact me.
+              </p>
+              Contact : +94 77 123 4567<br>
+              Email   : 1sFJy@example.com
+            </div>
+
+            <form>
+              <input type="text" placeholder="Your Name" /><br />
+              <input type="text" placeholder="Your Email" /><br />
+              <input type="text" placeholder="Message title" /><br />
+              <textarea placeholder="Message"></textarea><br />
+              <button>SEND</button>
+            </form>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
